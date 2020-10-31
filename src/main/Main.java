@@ -18,7 +18,7 @@ public class Main {
         var test2 = "abcde";
         var test3 = "qwertyuiopasdfghjk1234567890";
         var selected = test3;
-        var length = 3;
+        var length = 5;
         var threads = 2;
         var debug = false;
         //  ********************
@@ -26,12 +26,12 @@ public class Main {
         PermutationDup p = new PermutationDup();
         long begin1 = System.nanoTime();
         p.permutation(selected, length, debug);
-        var all1 = (System.nanoTime() - begin1) / 1e9;
+        var all1 = (System.nanoTime() - begin1) / 1e8;
         System.out.println(p.count);
         System.out.println("-------");
         long begin2 = System.nanoTime();
         ParallelPermute.permute(selected, length, threads, debug);
-        var all2 = (System.nanoTime() - begin2) / 1e9;
+        var all2 = (System.nanoTime() - begin2) / 1e8;
         System.out.println(ParallelPermute.count);
 
         System.out.print(all1 + " vs ");

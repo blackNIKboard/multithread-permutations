@@ -42,7 +42,8 @@ public class ParallelPermute extends Thread {
         }
         try {
             for (Thread thread : threads) {
-                thread.join();
+//                thread.join();
+                thread.join(10000000);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
